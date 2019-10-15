@@ -12,6 +12,7 @@ function Star({ number, value, onClick, emptyColor, filledColor, size }) {
       className="clickable"
       onClick={handleClick}
       data-index={`star-${number}`}
+      data-testid="star-default"
     >
       <FontAwesomeIcon
         icon={faStar}
@@ -34,7 +35,7 @@ export default function StarRating(props) {
   } = props;
 
   return (
-    <span className={className}>
+    <span className={className} data-testid="render-specific">
       {[...Array(starCount).keys()].map(position => {
         return (
           <Star
